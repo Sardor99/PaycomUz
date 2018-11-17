@@ -18,7 +18,7 @@ PAYME_SETTINGS = {
 ```
 from PayMe.status import STATUS_OK , ORDER_NOT_FOND
 
-def perform_check(id=0,type='')
+def perform_check(id=0,type='',amount=0)
     #check order
     return STATUS_OK or return ORDER_NOT_FOND
 ```

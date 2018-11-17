@@ -24,9 +24,9 @@ class MerchantAPIVIew(APIView):
             parser_classes = JSONParser
             API_METHOD = request.data['method']
             if API_METHOD == 'CheckPerformTransaction':
-                id,type = CheckPerformTransaction_key(request.data)
+                id,amount,type = CheckPerformTransaction_key(request.data)
                 import_settings = import_module(settings.PAYME_SETTINGS['PATH_CHECK_PERFORM_TRANSACTION'])
-                status = import_settings.check_perform(id=id,type=type)
+                status = import_settings.check_perform(id=id,amount=amount,type=type)
                 if status == STATUS_OK:
                     return Response({
                        "result": {

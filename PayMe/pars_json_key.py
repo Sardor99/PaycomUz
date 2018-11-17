@@ -5,12 +5,14 @@ accounts_key = settings.PAYME_SETTINGS['ACCOUNTS']
 def CheckPerformTransaction_key(data):
     if accounts_key['KEY2'] == False:
         id = data['params']['account'][accounts_key['KEY1']]
-        return id,None
+        amount = data['params']['amount']
+        return id,amount,None
 
     else:
         id = data['params']['account'][accounts_key['KEY1']]
         type = data['params']['account'][accounts_key['KEY2']]
-        return id,type
+        amount = data['params']['amount']
+        return id,amount,type
 
 def CreateTransaction_key(data):
     if accounts_key['KEY2'] == False:
