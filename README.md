@@ -6,8 +6,9 @@ PAYME_SETTINGS = {
     "HOST":"https://checkout.test.paycom.uz/api",   #test host
     "ID":"<<API TOKEN>>",          #token
     "SECRET_KEY":"<<PASSWORD KEY>>",  #password
-    "PATH_CHECK_PERFORM_TRANSACTION":"PayMe.views",  #check order
-    "PATH_SUCCESS_FUNCTION":"PayMe.views",
+    "PATH_CHECK_PERFORM_TRANSACTION":"<<path function>>",  #check order
+    "PATH_SUCCESS_FUNCTION":"<<path function>>",  #update order
+    "PATH_ERROR_FUNCTION":"<<path function>>", #error order
     "ACCOUNTS":{
         "KEY1":"id",
         "KEY2":"type"
