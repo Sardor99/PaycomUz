@@ -10,7 +10,7 @@ class TransactionMyAdmin(admin.ModelAdmin):
 
     @staticmethod
     def price(obj):
-        return "{} {}".format(obj.amount, '$')
+        return "{} {}".format(obj.amount, 'UZS')
     @staticmethod
     def transaction_id(obj):
         return "{}".format(obj._id)
