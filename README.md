@@ -1,4 +1,4 @@
-#Django-PayMeUz
+#PayMe
 
 **settings.py**
 ```
