@@ -45,6 +45,8 @@ def receipts_create(id=0,price=0.00,token='',type=''):
                 error=data['error'],
                 request_id='401'
             )
+            import_settings = import_module(settings.PAYME_SETTINGS['PATH_ERROR_FUNCTION'])
+            error_transaction = import_settings.error_order(id=error.id)
             return False
         else:
             receipts_pay(id=data['result']['receipt']['_id'],token=token)
@@ -73,6 +75,9 @@ def receipts_pay(id='',token=''):
                 error_transaction.state = 0
                 error_transaction.error = data['error']
                 error_transaction.save()
+
+                import_settings = import_module(settings.PAYME_SETTINGS['PATH_ERROR_FUNCTION'])
+                error = import_settings.error_order(id=error_transaction.id)
             except Transaction.DoesNotExist:
                 print("TRANSACTION NOT FOND")
             return False
@@ -87,6 +92,9 @@ def receipts_pay(id='',token=''):
             error_transaction.state = 0
             error_transaction.error = 'SERVER ERROR 500'
             error_transaction.save()
+
+            import_settings = import_module(settings.PAYME_SETTINGS['PATH_ERROR_FUNCTION'])
+            error = import_settings.error_order(id=error_transaction.id)
         except Transaction.DoesNotExist:
             print("TRANSACTION NOT FOND")
             return False
