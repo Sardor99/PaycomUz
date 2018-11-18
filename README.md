@@ -22,7 +22,7 @@ INSTALLED_APPS = [
 ```
 python manage.py migrate
 ```
-
+**settings.py**
 ```
 PAYME_SETTINGS = {
     "HOST":"https://checkout.test.paycom.uz/api",   #test host
