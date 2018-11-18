@@ -1,4 +1,4 @@
-# **DJANGO RESTFRAMEWORK PAYCOMUZ**
+# **DJANGO RESTFRAMEWORK PAYCOMUZ 🇺🇿**
 
 ```
 pip install Django
