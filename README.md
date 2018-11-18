@@ -5,7 +5,7 @@ pip install Django
 pip install Djangorestframework
 pip install PaycomUz
 ```
-
+**settings.py**
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',
